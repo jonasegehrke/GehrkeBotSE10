@@ -3,6 +3,7 @@ package me.gehrke.jdatuts;
 import me.gehrke.jdatuts.command.CommandContext;
 import me.gehrke.jdatuts.command.ICommand;
 import me.gehrke.jdatuts.command.commands.*;
+import me.gehrke.jdatuts.command.commands.games.amongus.AmongUsCodeCommand;
 import me.gehrke.jdatuts.command.commands.music.*;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
@@ -33,6 +34,7 @@ public class CommandManager {
         addCommand(new PauseCommand());
         addCommand(new StopCommand());
         addCommand(new LeaveCommand());
+        addCommand(new AmongUsCodeCommand());
     }
 
     private void addCommand(ICommand cmd){
