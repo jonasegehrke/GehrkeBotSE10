@@ -4,6 +4,7 @@ import me.gehrke.jdatuts.command.CommandContext;
 import me.gehrke.jdatuts.command.ICommand;
 import me.gehrke.jdatuts.command.commands.*;
 import me.gehrke.jdatuts.command.commands.games.amongus.AmongUsCodeCommand;
+import me.gehrke.jdatuts.command.commands.games.amongus.LobbyCommand;
 import me.gehrke.jdatuts.command.commands.music.*;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
@@ -26,15 +27,14 @@ public class CommandManager {
         addCommand(new KickCommand());
         addCommand(new MemeCommand());
         addCommand(new JoinCommand());
-        addCommand(new WebhookCommand());
         addCommand(new JokeCommand());
-        addCommand(new InstagramCommand());
         addCommand(new PlayCommand());
         addCommand(new SkipCommand());
         addCommand(new PauseCommand());
         addCommand(new StopCommand());
         addCommand(new LeaveCommand());
         addCommand(new AmongUsCodeCommand());
+        addCommand(new LobbyCommand());
     }
 
     private void addCommand(ICommand cmd){

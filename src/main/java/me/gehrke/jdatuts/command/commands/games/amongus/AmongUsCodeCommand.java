@@ -33,7 +33,7 @@ public class AmongUsCodeCommand implements ICommand {
 
     @Override
     public String getName() {
-        return "amongus";
+        return "code";
     }
 
     @Override

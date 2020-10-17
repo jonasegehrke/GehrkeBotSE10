@@ -10,10 +10,13 @@ import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.entities.VoiceChannel;
 import net.dv8tion.jda.api.managers.AudioManager;
 
+import javax.annotation.Nullable;
 import java.net.URI;
 import java.net.URISyntaxException;
 
 public class PlayCommand implements ICommand {
+    
+
     @SuppressWarnings("ConstantConditions")
     @Override
     public void handle(CommandContext ctx) {
@@ -30,24 +33,35 @@ public class PlayCommand implements ICommand {
         audioManager.setSelfDeafened(true);
 
         if(ctx.getArgs().isEmpty()){
-            channel.sendMessage("Correct usage is `" + Config.get("prefix") + "play <song link>`");
+            channel.sendMessage("Correct usage is `" + Config.get("prefix") + "play <song input>`");
             return;
         }
         final Member self = ctx.getSelfMember();
         final GuildVoiceState selfVoiceState = self.getVoiceState();
 
-        String link = String.join("", ctx.getArgs());
-        String front = link.substring(0,link.length() / 2);
-        String back = link.substring(link.length() / 2-1, link.length());
+        String input = String.join("", ctx.getArgs());
+        String front = input.substring(0,input.length() / 2);
+        String back = input.substring(input.length() / 2-1, input.length());
 
-        if(!isUrl(link)){
-            link = "ytsearch:" + front + " " +back;
-        }else{
-            link = "ytsearch:" + link;
+        if(!isUrl(input)){
+            String ytSearched = searchYoutube(input);
+
+            if(ytSearched == null){
+                channel.sendMessage("Youtube returned no results").queue();
+                return;
+            }
+            input = ytSearched;
         }
 
+        /*
+        if(!isUrl(input)){
+            input = "ytsearch:" + front + " " +back;
+        }else{
+            input = "ytsearch:" + input;
+        }*/
+
         PlayerManager.getInstance()
-                .loadAndPlay(channel, link);
+                .loadAndPlay(channel, input);
     }
 
     @Override
@@ -70,4 +84,10 @@ public class PlayCommand implements ICommand {
         }
     }
 
+    @Nullable
+    private String searchYoutube(String input){
+
+
+        return null;
+    }
 }

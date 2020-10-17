@@ -23,7 +23,7 @@ dependencies {
     compile group: 'org.menudocs', name: 'paste-client-java', version: '1.0.16'
     compile group: 'com.sedmelluq', name: 'lavaplayer', version:'1.3.50'
     compile group: 'club.minnced', name: 'discord-webhooks', version: '0.4.1'
-
+    compile group: 'com.google.apis', name: 'google-api-services-youtube', version: 'v3-rev222-1.25.0'
 }
 jar {
 

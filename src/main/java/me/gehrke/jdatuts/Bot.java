@@ -34,7 +34,7 @@ public class Bot {
                 ))
 
                 .enableCache(CacheFlag.VOICE_STATE)
-                .setActivity(Activity.playing("IntelliJ IDEA"))
+                .setActivity(Activity.playing("type \"" +Config.get("prefix") + "help\""))
                 .addEventListeners(new Listener())
                 .build();
     }
