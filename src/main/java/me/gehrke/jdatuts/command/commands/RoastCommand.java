@@ -12,7 +12,7 @@ public class RoastCommand implements ICommand {
     @Override
     public void handle(CommandContext ctx) {
         String Roast[] = {" i'd slap you, but that'd be animal abuse",
-                " you sound better with your moth closed",
+                " you sound better with your mouth closed",
                 " if you ran like your mouth you'd be in good shape",
                 " here's a tissue. You have a little bullshit on your lip",
                 " your face makes onions cry",
@@ -24,6 +24,12 @@ public class RoastCommand implements ICommand {
             ctx.getChannel().sendMessage("Please make sure to mention a user!").queue();
         }else{
             User target = ctx.getMessage().getMentionedUsers().get(0);
+            User sender = ctx.getMember().getUser();
+
+            if (target.getId().equals("249272967333281792")){ //Aint nobody roasting me
+                target = sender;
+            }
+
             ctx.getChannel().sendMessage("<@"+target.getId() + ">" + Roast[randomNumber]).queue();
         }
     }

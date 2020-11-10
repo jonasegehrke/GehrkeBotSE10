@@ -4,7 +4,7 @@ import me.gehrke.jdatuts.command.CommandContext;
 import me.gehrke.jdatuts.command.ICommand;
 import me.gehrke.jdatuts.command.commands.*;
 import me.gehrke.jdatuts.command.commands.games.amongus.*;
-import me.gehrke.jdatuts.command.commands.music.*;
+
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import javax.annotation.Nullable;
@@ -25,14 +25,8 @@ public class CommandManager {
         addCommand(new PasteCommand());
         addCommand(new KickCommand());
         addCommand(new MemeCommand());
-        addCommand(new JoinCommand());
         addCommand(new JokeCommand());
-        addCommand(new PlayCommand());
-        addCommand(new SkipCommand());
-        addCommand(new PauseCommand());
-        addCommand(new StopCommand());
-        addCommand(new LeaveCommand());
-        addCommand(new AmongUsCodeCommand());
+        addCommand(new CodeCommand());
         addCommand(new LobbyCommand());
         addCommand(new MiraCommand());
         addCommand(new PolusCommand());

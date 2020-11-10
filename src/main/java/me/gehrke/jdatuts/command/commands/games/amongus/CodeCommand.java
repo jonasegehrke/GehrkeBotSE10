@@ -7,7 +7,7 @@ import net.dv8tion.jda.api.entities.TextChannel;
 
 import java.util.List;
 
-public class AmongUsCodeCommand implements ICommand {
+public class CodeCommand implements ICommand {
     private List<String> amongUsKey;
 
     public List<String> getAmongUsKey() {
