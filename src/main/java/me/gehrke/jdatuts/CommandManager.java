@@ -3,8 +3,7 @@ package me.gehrke.jdatuts;
 import me.gehrke.jdatuts.command.CommandContext;
 import me.gehrke.jdatuts.command.ICommand;
 import me.gehrke.jdatuts.command.commands.*;
-import me.gehrke.jdatuts.command.commands.games.amongus.AmongUsCodeCommand;
-import me.gehrke.jdatuts.command.commands.games.amongus.LobbyCommand;
+import me.gehrke.jdatuts.command.commands.games.amongus.*;
 import me.gehrke.jdatuts.command.commands.music.*;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
@@ -35,6 +34,9 @@ public class CommandManager {
         addCommand(new LeaveCommand());
         addCommand(new AmongUsCodeCommand());
         addCommand(new LobbyCommand());
+        addCommand(new MiraCommand());
+        addCommand(new PolusCommand());
+        addCommand(new SkeldCommand());
     }
 
     private void addCommand(ICommand cmd){

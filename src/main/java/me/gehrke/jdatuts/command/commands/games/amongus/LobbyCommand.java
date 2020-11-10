@@ -34,6 +34,6 @@ public class LobbyCommand implements ICommand {
     @Override
     public String getHelp() {
         return "Start a lobby and see who is up for gaming!\n" +
-                "Usage: `" + Config.get("prefix" + "lobby`");
+                "Usage: `" + Config.get("prefix") + "lobby`";
     }
 }
